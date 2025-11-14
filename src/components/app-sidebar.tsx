@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "react-router-dom"
 import {
   IconHelp,
   IconLayoutDashboard,
@@ -56,10 +57,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:p-1.5"
             >
-              <a href="/">
+              <Link to="/">
                 <Beer className="size-10 text-amber-500" />
                 <span className="text-base"><strong>Chopp</strong> Control</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
