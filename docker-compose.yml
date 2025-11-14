@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: gabriel/chopp_control_web:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - mosquitto
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
