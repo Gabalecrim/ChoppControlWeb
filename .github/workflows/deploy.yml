@@ -2,7 +2,7 @@ name: chopp-control-web-infra
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
 
 jobs:
   build:
