@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { mqttService, MachineStatus, CycleStatus } from '@/lib/mqtt';
+import { useEffect, useState } from "react";
+import { mqttService, type MachineStatus, type CycleStatus } from "@/lib/mqtt";
 
 export function useMachineStatus() {
   const [status, setStatus] = useState<MachineStatus>({
     totalCans: 0,
     cansInProcess: 0,
     completedCans: 0,
-    averageTime: '00:00',
+    averageTime: "00:00",
   });
 
   const [isConnected, setIsConnected] = useState(false);
@@ -63,7 +63,7 @@ export function useMQTTPublish() {
     mqttService.publishStatus(status);
   };
 
-  const publishCommand = (command: string, data?: any) => {
+  const publishCommand = (command: string, data?: string) => {
     mqttService.publishCommand(command, data);
   };
 
