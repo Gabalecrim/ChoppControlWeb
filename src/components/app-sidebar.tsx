@@ -23,14 +23,13 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/dashboard",
+      url: "/",
       icon: IconLayoutDashboard,
     },
     {
       title: "Painel de Controle",
-      url: "/paineldecontrole",
+      url: "/painel",
       icon: IconSTurnUp,
-      active: true,
     },
     {
       title: "Configurações",
